@@ -17,6 +17,7 @@ Main things to complete are:
 * Automate the build (esp. the hashed JS file ref)
 * Optimize list rendering to reduce reflow / repaint
 * Use a single source for views / templates
+* Cross-browser compatibility & testing (only Chrome + Safari + FireFox)
 * Lots of tidy up!
 
 ## Server Side Rendering
