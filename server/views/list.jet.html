@@ -1,0 +1,85 @@
+{{ extends "layout" }}
+{{ block css() }}
+      .nav {
+        padding: 1em;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .prev, .next {
+        color: #666;
+        text-decoration: none;
+        margin: 0 1em;
+      }
+      [disabled] {
+        visibility: hidden;
+      }
+      #prerender {
+        table-layout: fixed;
+        border-collapse: collapse;
+      }
+      ol {
+        counter-reset: Item {{ (.Page - 1) * 30}};
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+      }
+      li {
+        clear: both;
+        margin: 1.5rem 0.5rem;
+        font-size: 0.75em;
+      }
+      li:before {
+        content: counter(Item, decimal);
+        counter-increment: Item;
+        font-size: 1.5rem;
+        min-width: 1.5em;
+        margin-right: 0.75rem;
+        float: left;
+        text-align: right;
+        color: #666;
+      }
+      h3 {
+        font-size: 1rem;
+        font-weight: normal;
+        margin: 0.5rem 0;
+      }
+      .title {
+        color: #000;
+        text-decoration: none;
+      }
+      .item {
+        margin-left: 3rem;
+      }
+      .user, .comments {
+        color: #333
+      }
+{{ end }}
+
+{{ block views() }}
+      <hn-list route="top" path="news" page="{{ .Page }}" active>
+        <div class="nav">
+          <a class="prev" href="/{{ .Key }}/{{ .Page - 1 }}"{{ if .Page < 2 }} disabled{{ end }}>&lt; prev</a> <span class="page">{{ .Page }}</span> / <span class="count">3</span> <a class="next" href="/{{ .Key }}/{{ .Page + 1 }}"{{ if .Page > 9 }} disabled{{ end }}>next &gt;</a>
+        </div>
+        <ol>
+          {{ range index, item := .Data }}
+          <li>
+            <div class="item">
+              <h3><a class="title" href="#">{{ item.Title }}</a> <small>({{ item.Domain }})</small></h3>
+              {{ item.Points }} points by <a class="user" href="#">{{ item.User }}</a> {{ item.TimeAgo }} | <a class="comments" href="/item/{{ item.ID }}">{{ item.CommentsCount }} comments</a>
+            </div>
+          </li>
+          {{ end }}
+        </ol>
+        <div class="nav">
+          <a class="prev" href="/{{ .Key }}/{{ .Page - 1 }}"{{ if .Page < 2 }} disabled{{ end }}>&lt; prev</a> <span class="page">{{ .Page }}</span> / <span class="count">3</span> <a class="next" href="/{{ .Key }}/{{ .Page + 1 }}"{{ if .Page > 9 }} disabled{{ end }}>next &gt;</a>
+        </div>
+      </hn-list>
+      <hn-list route="new" path="newest"></hn-list>
+      <hn-list route="ask" path="ask"></hn-list>
+      <hn-list route="show" path="show"></hn-list>
+      <hn-list route="jobs" path="jobs"></hn-list>
+      <hn-item route="item"></hn-item>
+      <hn-about route="about"></hn-about>
+{{ end }}

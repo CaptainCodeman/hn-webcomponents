@@ -1,0 +1,21 @@
+{{ extends "layout" }}
+{{ block css() }}
+{{ end }}
+
+{{ block views() }}
+      <hn-list route="top" path="news"></hn-list>
+      <hn-list route="new" path="newest"></hn-list>
+      <hn-list route="ask" path="ask"></hn-list>
+      <hn-list route="show" path="show"></hn-list>
+      <hn-list route="jobs" path="jobs"></hn-list>
+      <hn-item route="item"></hn-item>
+      <hn-about route="about" active>
+        <h1>About</h1>
+        <p>This is an example of a PWA built using pure WebComponents.</p>
+        <p>It is not intended to be any kind of definitive blueprint for building applications,
+          just an example to demonstrate that it is possible to build a modern, fast, Progressive
+          Web App without depending on a framework - because WebComponents are like having a
+          framework that is built in to the browser.</p>
+        <p><a href="https://github.com/CaptainCodeman/hn-webcomponents">Github Repo</a>.</p>
+      </hn-about>
+{{ end }}

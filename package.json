@@ -1,0 +1,26 @@
+{
+  "name": "hn-webcomponents",
+  "version": "1.0.0",
+  "description": "Hacker News PWA with WebComponents",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup -c -w --environment NODE_ENV:development",
+    "build": "rollup -c"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2016": "^6.24.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-hash": "^1.2.0",
+    "rollup-plugin-uglify": "^2.0.0",
+    "rollup-watch": "^3.2.2",
+    "sw-precache": "^5.1.1",
+    "uglify-es": "^3.0.9"
+  }
+}

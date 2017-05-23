@@ -1,0 +1,13 @@
+{{ extends "layout" }}
+{{ block css() }}
+{{ end }}
+
+{{ block views() }}
+      <hn-list route="top" path="news"></hn-list>
+      <hn-list route="new" path="newest"></hn-list>
+      <hn-list route="ask" path="ask"></hn-list>
+      <hn-list route="show" path="show"></hn-list>
+      <hn-list route="jobs" path="jobs"></hn-list>
+      <hn-item route="item"></hn-item>
+      <hn-about route="about"></hn-about>
+{{ end }}

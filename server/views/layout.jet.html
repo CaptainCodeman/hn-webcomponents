@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>WebComponents Hacker News</title>
+
+    <meta name="description" content="WebComponents Hacker News">
+    <meta name="theme-color" content="#3f51b5">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="data:image/gif;base64,R0lGODlhEAAQAPYAAAEAAAAAAQEBAQICAwUFAQIDBgoKAg8ZNE9VChsrXxw2aHetcJSfEZOgF9jqH8TfOsPfPcPfPtftJ9jsJ9jtJ9rvJ9HoLtHoL8bhM83nMcvkNc3tMMnpNMLlPOP2IZC9W4q6YpzFUb3fQbrYRbzbRbLfS67cUKrZVLjiRSlNmSVRnCtRoSZdpSlbpipdqCpdqSpeqithpShwrCZtsSlqsSprsylttCJxsiJ5tyd8tiZ9vil5vSl6vSh/wiKDvieJvyiHxymHxyeOwCKKxCiQziiRziiU0QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEcAIf8LSW1hZ2VNYWdpY2sNZ2FtbWE9MC40NTQ1NQAh/wtNR0tJUFRDMDAwMBw4QklNBAQAAAAAAA8cAm4AA1JGRxwCAAACAAQAACwAAAAAEAAQAAAHd4BHgoOEhYaHhwKKBQowNTtBRYaKAAcpLzU8QEaFigIDCSsuNDc4PkODnoqEKiwzOqmehi02PURHqocxMjk/QrmGGCEfIAu4soUSFw8jgqoChBscHSKEngQMHhMZKCUmJ50CAQgOFBYaESST4gYNFecQ6ojz9IeBADs=" sizes="16x16">
+
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 16px;
+        margin: 0 auto;
+        padding: 0;
+      }
+      nav {
+        background-color: #f0f0f0;
+        height: 3.5em;
+        padding: 0.5em;
+        box-sizing: border-box;
+        white-space: nowrap;
+      }
+      nav a {
+        color: #333;
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: bold;
+        letter-spacing: .075em;
+        margin-right: 0.5em;
+        text-decoration: none;
+        font-size: 1em;
+      }
+      nav a:last-child {
+        float: right;
+        padding: 10px;
+      }
+      .logo {
+        height: 2.5em;
+        width: 2.5em;
+        vertical-align: middle;
+        fill: white;
+      }
+      hn-app {
+        display: block;
+        margin: 0.5em;
+      }
+      {{ yield css() }}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="https://www.webcomponents.org/" target="_blank" rel="noopener" title="WebComponents Logo">
+        <svg class="logo" viewBox="0 0 161 132" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="0%" y1="50%" y2="50%" id="a"><stop stop-color="#2A3B8F" offset="0%"/><stop stop-color="#29ABE2" offset="100%"/></linearGradient><linearGradient x1="0%" y1="50%" y2="50%" id="b"><stop stop-color="#2A3B8F" offset="0%"/><stop stop-color="#29ABE2" offset="100%"/></linearGradient><linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="c"><stop stop-color="#B4D44E" offset="0%"/><stop stop-color="#E7F716" offset="100%"/></linearGradient><linearGradient x1="100%" y1="50%" x2="0%" y2="50%" id="d"><stop stop-color="#B4D44E" offset="0%"/><stop stop-color="#E7F716" offset="100%"/></linearGradient></defs><g fill="none" fill-rule="evenodd"><path fill="#166DA5" d="M160.6 65.9l-17.4 29.3-24.4-29.7 24.4-28.9z"/><path fill="#8FDB69" d="M141.3 100.2l-26.5-31.7-15.9 26.6 24.7 36.1z"/><path fill="#166DA5" d="M141 31.4l-26.2 31.8-15.9-26.6L123.6.9z"/><path fill="url(#a)" opacity=".95" d="M61.1 31.4H141L123.4.9H78.7z"/><path fill="url(#b)" opacity=".95" d="M114.8 63.3H159l-15.9-26.8H98.8"/><path fill="url(#c)" opacity=".95" d="M141.3 100.3H61l17.6 30.5h45z"/><path fill="#010101" d="M78.6 130.8L41 65.8 79.1.8H37.9L.4 65.8l37.5 65z"/><path fill="url(#d)" opacity=".95" d="M114.8 68.4H159l-15.9 26.8H98.8"/></g></svg>
+      </a>
+      <a href="/top/1">top</a>
+      <a href="/new/1">new</a>
+      <a href="/ask/1">ask</a>
+      <a href="/show/1">show</a>
+      <a href="/jobs/1">jobs</a>
+      <a href="/about">about</a>
+    </nav>
+    <hn-app>
+      {{ yield views() }}
+    </hn-app>
+  </body>
+
+  <script src="/static/index.4ca7c4a39debdfacb113b32584d86fdaae83cea8.js"></script>
+</html>
